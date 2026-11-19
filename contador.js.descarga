@@ -1,0 +1,17 @@
+function updateAmount(value) {
+  // Crear un formateador de número para español de Colombia
+  const formatter = new Intl.NumberFormat('es-CO', {
+    style: 'currency',
+    currency: 'COP', // Código de moneda para el peso colombiano
+    currencyDisplay: 'symbol', // Muestra el símbolo de la moneda
+    minimumFractionDigits: 0,
+  });
+
+  // Formatear el valor
+  const formattedValue = formatter.format(value);
+
+  // Actualizar el contenido del elemento con id 'amount' con el valor formateado
+  document.getElementById('amount').textContent = formattedValue;
+}
+
+  
